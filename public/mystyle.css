@@ -1,0 +1,39 @@
+body {
+    background-color: beige;
+}
+
+.sembunyi {
+    display: none ;
+}
+/* folder luar buat dimasukin*/
+a:link {
+    text-decoration: none;
+    color: rgb(123, 50, 62);
+    
+}
+
+a:visited {
+    text-decoration: none;
+    color:  rgb(123, 50, 62);
+}
+
+a:hover {
+    text-decoration: none;
+    color: green;
+    font-weight: bold;
+}
+
+.profpicture {
+    border-radius: 30%;
+}
+
+.fotobiasa {
+    border-radius: 20px 20px ;
+}
+
+.kotakfoto {
+    border-radius: 10px 10px;
+    border: 5px solid darkblue;
+    padding: 5px;
+    width: 300px;
+}

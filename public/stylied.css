@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,500;9..40,600;9..40,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,500;9..40,600;9..40,700&family=Inter:wght@300;500;600;700&display=swap');
+
+
+body {
+    display: flex auto;
+    background-color: #C30000;
+    text-align: center;
+    justify-items: center;
+    font-family: Dm sans;
+}
+
+.olid-fotobulet {
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 68.6px;
+}
+.olid-judul {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    margin-top: 16px;
+    text-align: center;
+    font-family: dm sans;
+    line-height: 1.5;
+}
+
+.olid-deskripsi {
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    margin-top: 10px;
+    text-align: center;
+    font-family: Inter;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.olid-box {
+    border-radius: 30px;
+    max-width: 680px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    border: 2px solid #FFFFFF;
+    text-decoration: none;
+    color: white;
+    width: 640px;
+    line-height: 1.5;
+    font-family: Inter;
+    margin-top: 16px;
+    
+}
+
+.olid-box:hover {
+    text-decoration: none;
+    color: #C30000;
+    transition: all 250ms;
+    background-color: #FFFFFF;
+    
+}
+
+.olid-box:hover::after {
+    content: '...'; 
+    position: absolute;
+    top: 50%;
+    right: 440px; 
+    transform: translateY(-80%);
+    font-size: 24px;
+    font-weight:lighter;
+    color: #C30000;
+    
+}
+
+.olid-linktreebutton {
+    width: 100px;
+    height: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    
+}
+
+.olid-icon {
+    display: block;
+    margin-left: auto;
+    
+}
+
+.olid-igbutton {
+    width: 30px;
+    height: 35px;
+    padding-right: 8px;
+}
+
+.olid-emailbutton {
+    width: 36px;
+    height: 36px;
+    padding-left: 8px;
+}
+
+.olid-emailbutton:hover {
+    transform: scale(1.10);
+}
+
+.olid-igbutton:hover {
+    transform: scale(1.10);
+}
