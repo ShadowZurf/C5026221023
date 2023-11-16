@@ -65,3 +65,21 @@ Route::get('tugasLayout', function () {
 
 Route::get('perkalian', 'App\Http\Controllers\DosenController@index');
 Route::get('biodata', 'App\Http\Controllers\DosenController@biodata');
+
+Route::get('showjam/{jam}', 'App\Http\Controllers\DosenController@showtime');
+
+Route::get('formulir', 'App\Http\Controllers\DosenController@formulir');
+
+Route::post('/formulir/proses', 'App\Http\Controllers\DosenController@proses');
+
+Route::get('/blog2', function () {
+    return view('home');
+});
+
+Route::get('/blog2/tentang', function () {
+    return view('tentang');
+});
+
+Route::get('/blog2/kontak', function () {
+    return view('kontak');
+});
