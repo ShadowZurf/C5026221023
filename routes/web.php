@@ -97,3 +97,25 @@ Route::get('/pegawai/cari','App\Http\Controllers\PegawaiController@cari');
 
 
 Route::get('/pegawai/view/{id}','App\Http\Controllers\PegawaiController@view');
+
+
+//latsol eas
+Route::get('/nilaikuliah','App\Http\Controllers\NilaiController@index');
+Route::get('/nilaikuliah/tambah','App\Http\Controllers\NilaiController@tambah');
+Route::post('/nilaikuliah/store','App\Http\Controllers\NilaiController@store');
+
+//latsol eas 2
+Route::get('/masker','App\Http\Controllers\MaskerController@index');
+Route::get('/masker/tambah','App\Http\Controllers\MaskerController@tambah');
+Route::post('/masker/store','App\Http\Controllers\MaskerController@store');
+Route::get('/masker/edit/{id}','App\Http\Controllers\MaskerController@edit');
+Route::post('/masker/update','App\Http\Controllers\MaskerController@update');
+Route::get('/masker/hapus/{id}','App\Http\Controllers\MaskerController@hapus');
+Route::get('/masker/cari','App\Http\Controllers\maskercontroller@cari');
+Route::get('/masker/view/{id}','App\Http\Controllers\maskercontroller@view');
+
+//latsol kelas cewek
+Route::get('/keranjangbelanja','App\Http\Controllers\KeranjangController@index');
+Route::get('/keranjangbelanja/beli','App\Http\Controllers\KeranjangController@beli');
+Route::post('/keranjangbelanja/store','App\Http\Controllers\KeranjangController@store');
+Route::get('/keranjangbelanja/hapus/{id}','App\Http\Controllers\KeranjangController@hapus');
