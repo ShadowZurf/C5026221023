@@ -26,6 +26,7 @@
             </div>
         </div>
         <input type="submit" value="Simpan Data">
+        <input type="hidden" name="kodemasker" value="{{ $m->kodemasker }}">
 	</form>
 	@endforeach
 @endsection

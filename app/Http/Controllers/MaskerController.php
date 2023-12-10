@@ -79,6 +79,7 @@ class MaskerController extends Controller
         }
 		// update data pegawai
 		DB::table('masker')->where('kodemasker',$request->kodemasker)->update([
+            'kodemasker' => $request->kodemasker,
 			'merkmasker' => $request->merkmasker,
 			'stockmasker' => $request->stockmasker,
 			'tersedia' => $tersedia
