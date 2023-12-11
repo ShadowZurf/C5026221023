@@ -23,9 +23,9 @@
 		@foreach($karyawan as $k)
 		<tr>
 			<td>{{ $k->kodepegawai }}</td>
-			<td>{{ $k->namalengkap }}</td>
+			<td>{{ strtoupper($k->namalengkap) }}</td>
 			<td>{{ $k->divisi }}</td>
-			<td>{{ $k->departemen }}</td>
+			<td>{{ strtolower($k->departemen) }}</td>
             <td>
 				<a href="/masker/hapus/{{ $k->kodepegawai }}" class="btn btn-danger">Hapus</a>
 			</td>

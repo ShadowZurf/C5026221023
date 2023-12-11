@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
 
 class KaryawanController extends Controller
@@ -31,31 +31,16 @@ class KaryawanController extends Controller
 	// method untuk insert data ke table pegawai
 	public function store(Request $request)
 	{
-        $validator = Validator::make($request->all(), [
-        'kodepegawai' => 'required|unique:karyawan,kodepegawai,' . $request->kodepegawai,
-        // ... other validation rules for other fields
-    ]);
-
-    // Lakukan pemeriksaan manual jika validasi gagal
-    if ($validator->fails()) {
-        $existingPegawai = karyawan::where('kodepegawai', $request->kodepegawai)->first();
-
-        // Jika kodepegawai sudah ada
-        if ($existingPegawai) {
-            return redirect()->back()->withInput()->with('warning', 'Kode Pegawai sudah digunakan oleh pegawai lain');
-        }
-
-        // Jika terdapat kesalahan validasi selain kodepegawai yang sudah digunakan
-        return redirect()->back()->withErrors($validator)->withInput();
-    }
-
-    // Simpan data jika validasi berhasil
-    $karyawan = karyawan::updateOrCreate(
-        ['kodepegawai' => $request->kodepegawai], // Jika ada ID, akan mengupdate data, jika tidak akan membuat data baru
-        $request->all()
-    );
-
-		// insert data ke table pegawai
+        $request->validate([
+            'kodepegawai' => [
+                'required',
+                Rule::unique('karyawan', 'kodepegawai'),
+            ],
+            'namalengkap' => 'required',
+            'divisi' => 'required',
+            'departemen' => 'required',
+        ]);
+        // insert data ke table pegawai
 		DB::table('karyawan')->insert([
 			'kodepegawai' => $request->kodepegawai,
 			'namalengkap' => $request->namalengkap,
@@ -63,9 +48,9 @@ class KaryawanController extends Controller
 			'departemen' => $request->departemen
 		]);
 		// alihkan halaman ke halaman pegawai
-		return redirect('/karyawan');
+           return redirect('/karyawan')->with('success', 'Data berhasil disimpan!');
+        }
 
-	}
 
 	public function update(Request $request)
 	{

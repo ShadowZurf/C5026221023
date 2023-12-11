@@ -9,6 +9,24 @@
 
 	<br/>
 	<br/>
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+
+<!-- Menampilkan Pesan Sukses -->
+@if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
 
 	<form action="/karyawan/store" method="post" class="form-horizontal">
 		{{ csrf_field() }}
